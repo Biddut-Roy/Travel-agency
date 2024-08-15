@@ -2,8 +2,9 @@ import { Box, Grid } from "@mui/material";
 import "./App.css";
 import NavBar from "./component/NavBar";
 import FlightSearch from "./Landing/FlightSearch";
-import backgroundImage from "/pngtree.png"; // Ensure this path is correct
+import backgroundImage from "/pngtree.png";
 import Nav from "./component/Nav";
+
 function App() {
   return (
     <>
@@ -12,8 +13,8 @@ function App() {
         <Grid component="div">
           <Box
             sx={{
-              padding: { xs: "5px", sm: "20px", md: "30px", lg: "50px" },
-              backgroundColor: "rgba(255, 255, 255, 0.8)",
+              padding: { xs: "0px", sm: "0px", md: "30px", lg: "50px" },
+              backgroundColor: "#EDF2F6",
               borderRadius: "8px",
               display: "flex",
             }}
@@ -25,19 +26,17 @@ function App() {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 minHeight: "100vh",
-                width: "93vw",
+                width: { xs: "100vw", sm: "100vw", md: "92vw", lg: "92vw" },
                 justifyContent: "center",
                 alignItems: "center",
                 textAlign: "center",
               }}
             >
-              <Box paddingTop={5} paddingBottom={2}>
+              <Box paddingTop={5}>
                 <Nav />
               </Box>
               <Box
                 sx={{
-                  padding: "50px",
-                  paddingTop: "0px",
                   borderRadius: "8px",
                 }}
               >
