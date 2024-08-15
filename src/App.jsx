@@ -14,6 +14,7 @@ function App() {
           <Box
             sx={{
               padding: { xs: "0px", sm: "0px", md: "30px", lg: "50px" },
+              paddingTop: { xs: "0px", sm: "0px", md: "0px", lg: "0px" },
               backgroundColor: "#EDF2F6",
               borderRadius: "8px",
               display: "flex",
