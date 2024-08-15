@@ -1,14 +1,12 @@
 import {
   AppBar,
   Box,
+  Button,
   Container,
-  IconButton,
   Toolbar,
   Tooltip,
   Typography,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-
 const NavBar = () => {
   return (
     <AppBar sx={{ bgcolor: "gray" }}>
@@ -39,18 +37,6 @@ const NavBar = () => {
             />
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-          </Box>
-
           <Typography
             variant="h5"
             noWrap
@@ -75,10 +61,19 @@ const NavBar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton sx={{ p: 0 }}>
-                <Typography>Login / Sign Up</Typography>
-              </IconButton>
+            <Tooltip title="Login or Sign Up">
+              <Button
+                variant="contained"
+                size="small"
+                sx={{
+                  bgcolor: "gray",
+                  "&:hover": {
+                    bgcolor: "gray",
+                  },
+                }}
+              >
+                Login/Sign Up
+              </Button>
             </Tooltip>
           </Box>
         </Toolbar>
