@@ -25,7 +25,7 @@ function App() {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                minHeight: "100vh",
+                maxHeight: "100vh",
                 width: { xs: "100vw", sm: "100vw", md: "92vw", lg: "92vw" },
                 justifyContent: "center",
                 alignItems: "center",

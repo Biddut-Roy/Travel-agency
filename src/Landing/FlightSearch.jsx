@@ -40,7 +40,6 @@ const FlightSearch = () => {
       }}
     >
       <Grid
-        container
         xs={12}
         md={8}
         sx={{
@@ -78,13 +77,13 @@ const FlightSearch = () => {
           </RadioGroup>
         </Grid>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={1} marginTop={2}>
           {/* Flight Selection */}
-          <Grid item xs={8} md={5} sx={{ margin: "auto" }}>
+          <Grid item xs={8} md={5} sx={{}}>
             <Typography variant="h6" align="center" color="textSecondary">
               From
             </Typography>
-            <Typography variant="h3" align="center" color="#66BB6A">
+            <Typography variant="h4" align="center" color="#66BB6A">
               DAC
             </Typography>
             <Box sx={{ mt: 2, color: "black" }}>
@@ -112,7 +111,7 @@ const FlightSearch = () => {
             >
               From
             </Typography>
-            <Typography variant="h3" align="center" color="#66BB6A">
+            <Typography variant="h4" align="center" color="#66BB6A">
               JED
             </Typography>
             <Box sx={{ mt: 2, color: "black" }}>
@@ -152,11 +151,11 @@ const FlightSearch = () => {
             />
           </Grid>
 
-          <Grid item xs={12} md={5} sx={{ margin: "auto" }}>
+          <Grid item xs={12} md={5}>
             <Typography variant="h6" align="center" color="textSecondary">
               To
             </Typography>
-            <Typography variant="h3" align="center" color="#66BB6A">
+            <Typography variant="h4" align="center" color="#66BB6A">
               JED
             </Typography>
             <Box sx={{ mt: 2, color: "black" }}>
@@ -177,7 +176,7 @@ const FlightSearch = () => {
               To
             </Typography>
             <Typography
-              variant="h3"
+              variant="h4"
               align="center"
               color="#66BB6A"
               sx={{ mt: 2 }}

@@ -20,11 +20,11 @@ const FlightSearchSection = () => {
       container
       sx={{
         maxWidth: "100%",
-        minHeight: "100vh",
-        position: "relative", // Position relative for the container
+        minHeight: "75vh",
+        position: "relative",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between", // Space between items to push content up
+        justifyContent: "space-between",
       }}
     >
       <Grid item xs={12}>
@@ -109,11 +109,11 @@ const FlightSearchSection = () => {
         item
         xs={12}
         sx={{
-          position: "absolute", // Position buttons absolutely within the container
+          position: "absolute",
           bottom: 0,
           left: 0,
           right: 0,
-          padding: "16px", // Add some padding for spacing
+          padding: "16px",
         }}
       >
         <Button
