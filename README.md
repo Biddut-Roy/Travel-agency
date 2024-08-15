@@ -1,8 +1,27 @@
-# React + Vite
+<div align="center">
+  <h1>Comprehensive Project README</h1>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# Project Name :Fly Far Tec
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology Stack
+
+- List of technologies:
+- Example: React, MUI.
+
+## Installation Guideline
+
+- step 1: Clone the git Repo:
+  ```bash
+    https://github.com/Biddut-Roy/Travel-agency.git
+  ```
+- step 2: Open vs code and Run Terminal:
+  ```bash
+    npm i
+  ```
+- step 3:
+  ```bash
+    npm run dev
+  ```
