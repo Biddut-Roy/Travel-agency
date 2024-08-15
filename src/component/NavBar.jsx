@@ -1,15 +1,15 @@
 import {
-  AppBar,
   Box,
   Button,
   Container,
+  Grid,
   Toolbar,
   Tooltip,
   Typography,
 } from "@mui/material";
 const NavBar = () => {
   return (
-    <AppBar sx={{ bgcolor: "gray" }}>
+    <Grid sx={{ bgcolor: "#EDF2F6" }}>
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
@@ -33,7 +33,7 @@ const NavBar = () => {
             <img
               src="https://cdn.flyfarint.com/WL/B2C/FFA2654/companylogo.webp?t=1723717693204"
               alt="Logo"
-              height={100}
+              height={80}
             />
           </Typography>
 
@@ -56,7 +56,7 @@ const NavBar = () => {
             <img
               src="https://cdn.flyfarint.com/WL/B2C/FFA2654/companylogo.webp?t=1723717693204"
               alt="Logo"
-              height={100}
+              height={80}
             />
           </Typography>
 
@@ -78,7 +78,7 @@ const NavBar = () => {
           </Box>
         </Toolbar>
       </Container>
-    </AppBar>
+    </Grid>
   );
 };
 

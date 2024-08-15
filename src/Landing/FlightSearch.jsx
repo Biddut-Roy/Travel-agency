@@ -14,7 +14,6 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FlightIcon from "@mui/icons-material/Flight";
 import EventIcon from "@mui/icons-material/Event";
 import FlightSearchSection from "../component/FlightSearchSection";
-import Nav from "../component/Nav";
 
 const airports = [
   { name: "Hazrat Shahjalal Intl Airport", code: "DAC" },
@@ -36,10 +35,6 @@ const FlightSearch = () => {
         boxShadow: 3,
       }}
     >
-      <Box mt={5}>
-        <Nav />
-      </Box>
-
       <Grid item xs={12}>
         <RadioGroup
           row
