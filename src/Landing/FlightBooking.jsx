@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  Typography,
   Button,
   Container,
   Grid,
@@ -8,16 +7,17 @@ import {
   Radio,
   RadioGroup,
   FormControlLabel,
-  FormLabel,
   Select,
   MenuItem,
   InputLabel,
   FormControl,
   InputAdornment,
+  Box,
 } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import FlightSearch from "../component/Flightsearch";
+import Nav from "../component/Nav";
 
 const FlightBooking = () => {
   const [tripType, setTripType] = useState("round-way");
@@ -28,7 +28,6 @@ const FlightBooking = () => {
   const [adultCount, setAdultCount] = useState(1);
   const [childCount, setChildCount] = useState(0);
   const [infantCount, setInfantCount] = useState(0);
-  const [cabinClass, setCabinClass] = useState("Economy");
 
   const handleTripTypeChange = (event) => {
     setTripType(event.target.value);
@@ -62,10 +61,6 @@ const FlightBooking = () => {
     setInfantCount(event.target.value);
   };
 
-  const handleCabinClassChange = (event) => {
-    setCabinClass(event.target.value);
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted");
@@ -73,19 +68,14 @@ const FlightBooking = () => {
   };
 
   return (
-    <div>
+    <Box sx={{ bgcolor: "white", color: "black", p: 2 }}>
+      <Nav />
       <Container maxWidth="lg" sx={{ mt: 5 }}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <form onSubmit={handleSubmit}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <Typography variant="h5" gutterBottom>
-                    Book Your Flight
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <FormLabel component="legend">Trip Type</FormLabel>
                   <RadioGroup
                     row
                     aria-label="trip-type"
@@ -229,21 +219,7 @@ const FlightBooking = () => {
                     </Select>
                   </FormControl>
                 </Grid>
-                <Grid item xs={12}>
-                  <FormControl fullWidth>
-                    <InputLabel id="cabin-class-label">Cabin Class</InputLabel>
-                    <Select
-                      labelId="cabin-class-label"
-                      id="cabin-class"
-                      value={cabinClass}
-                      onChange={handleCabinClassChange}
-                    >
-                      <MenuItem value="Economy">Economy</MenuItem>
-                      <MenuItem value="Business">Business</MenuItem>
-                      <MenuItem value="First Class">First Class</MenuItem>
-                    </Select>
-                  </FormControl>
-                </Grid>
+
                 <Grid item xs={12}>
                   <Button
                     type="submit"
@@ -262,7 +238,7 @@ const FlightBooking = () => {
           </Grid>
         </Grid>
       </Container>
-    </div>
+    </Box>
   );
 };
 

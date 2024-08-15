@@ -1,16 +1,18 @@
-import React from "react";
+import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { Grid } from "@mui/material";
 
 const FlightSearch = () => {
-  const [adult, setAdult] = React.useState("");
-  const [child, setChild] = React.useState("");
-  const [infant, setInfant] = React.useState("");
-  const [classType, setClassType] = React.useState("");
+  const [adult, setAdult] = useState("");
+  const [child, setChild] = useState("");
+  const [infant, setInfant] = useState("");
+  const [setClassType] = useState("");
+  const [cabinClass, setCabinClass] = useState("Economy");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -23,6 +25,9 @@ const FlightSearch = () => {
     } else if (name === "classType") {
       setClassType(value);
     }
+  };
+  const handleCabinClassChange = (event) => {
+    setCabinClass(event.target.value);
   };
 
   return (
@@ -58,24 +63,21 @@ const FlightSearch = () => {
             onChange={handleChange}
           />
         </div>
-        <FormControl variant="outlined">
-          <InputLabel id="class-type-label">Class Type</InputLabel>
-          <Select
-            labelId="class-type-label"
-            id="class-type-select"
-            name="classType"
-            value={classType}
-            onChange={handleChange}
-            label="Class Type"
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={"Economy"}>Economy</MenuItem>
-            <MenuItem value={"Business"}>Business</MenuItem>
-            <MenuItem value={"First"}>First</MenuItem>
-          </Select>
-        </FormControl>
+        <Grid item xs={12} sx={{ pb: { xs: "1rem", sm: "2rem", md: "3rem" } }}>
+          <FormControl fullWidth>
+            <InputLabel id="cabin-class-label">Cabin Class</InputLabel>
+            <Select
+              labelId="cabin-class-label"
+              id="cabin-class"
+              value={cabinClass}
+              onChange={handleCabinClassChange}
+            >
+              <MenuItem value="Economy">Economy</MenuItem>
+              <MenuItem value="Business">Business</MenuItem>
+              <MenuItem value="First Class">First Class</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
         <Button variant="contained" color="primary" fullWidth>
           Search for Flight
         </Button>
