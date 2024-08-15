@@ -2,14 +2,10 @@ import {
   Grid,
   Box,
   Typography,
-  CardContent,
   FormControlLabel,
   RadioGroup,
   Radio,
-  Autocomplete,
-  TextField,
 } from "@mui/material";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FlightIcon from "@mui/icons-material/Flight";
 import EventIcon from "@mui/icons-material/Event";
 import FlightSearchSection from "../component/FlightSearchSection";
@@ -17,16 +13,7 @@ import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
-
-const airports = [
-  { name: "Hazrat Shahjalal Intl Airport", code: "DAC" },
-  { name: "Dubai Intl Airport", code: "DXB" },
-  { name: "Cox's Bazar Airport", code: "CXB" },
-  { name: "Jashore Airport", code: "JSR" },
-  { name: "Barishal Airport", code: "BZL" },
-  { name: "Shah Makhdum Airport", code: "RJH" },
-  { name: "Saidpur Airport", code: "SPD" },
-];
+import AirportSelector from "./Test";
 
 const FlightSearch = () => {
   return (
@@ -79,49 +66,39 @@ const FlightSearch = () => {
 
         <Grid container spacing={1} marginTop={2}>
           {/* Flight Selection */}
-          <Grid item xs={8} md={5} sx={{}}>
-            <Typography variant="h6" align="center" color="textSecondary">
+          <Grid
+            item
+            xs={8}
+            md={5}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Typography
+              variant="h6"
+              align="center"
+              color="textSecondary"
+              mt={2}
+            >
               From
             </Typography>
             <Typography variant="h4" align="center" color="#66BB6A">
               DAC
             </Typography>
-            <Box sx={{ mt: 2, color: "black" }}>
-              <CardContent sx={{ display: "flex", alignItems: "center" }}>
-                <LocationOnIcon sx={{ color: "#66BB6A", mr: 1 }} />
-                <Autocomplete
-                  options={airports}
-                  getOptionLabel={(option) => `${option.name} (${option.code})`}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="Search a airport..."
-                      variant="outlined"
-                      fullWidth
-                    />
-                  )}
-                />
-              </CardContent>
-            </Box>
+            <AirportSelector value={2} />
             <Typography
               variant="h6"
               align="center"
               color="textSecondary"
-              marginTop={3}
+              mt={5}
             >
               From
             </Typography>
             <Typography variant="h4" align="center" color="#66BB6A">
               JED
             </Typography>
-            <Box sx={{ mt: 2, color: "black" }}>
-              <CardContent sx={{ display: "flex", alignItems: "center" }}>
-                <LocationOnIcon sx={{ color: "#66BB6A", mr: 1 }} />
-                <Typography variant="body2" sx={{ bgcolor: "#D7E7F4" }}>
-                  Jeddah Intl (JED)
-                </Typography>
-              </CardContent>
-            </Box>
+            <AirportSelector value={1} />
           </Grid>
 
           {/* Flight LOGO */}
@@ -151,58 +128,83 @@ const FlightSearch = () => {
             />
           </Grid>
 
-          <Grid item xs={12} md={5}>
-            <Typography variant="h6" align="center" color="textSecondary">
+          <Grid
+            item
+            xs={12}
+            md={5}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Typography
+              variant="h6"
+              align="center"
+              color="textSecondary"
+              mt={2}
+            >
               To
             </Typography>
             <Typography variant="h4" align="center" color="#66BB6A">
               JED
             </Typography>
-            <Box sx={{ mt: 2, color: "black" }}>
-              <CardContent sx={{ display: "flex", alignItems: "center" }}>
-                <LocationOnIcon sx={{ color: "#66BB6A", mr: 1 }} />
-                <Typography variant="body2" sx={{ bgcolor: "#D7E7F4" }}>
-                  Jeddah Intl (JED)
-                </Typography>
-              </CardContent>
-              <CardContent sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ color: "black" }}>
+              <AirportSelector value={0} />
+              <Box sx={{ display: "flex", alignItems: "center", mt: "2px" }}>
                 <EventIcon sx={{ color: "#66BB6A", mr: 1 }} />
-                <Typography variant="body2" sx={{ bgcolor: "#D7E7F4" }}>
-                  16 Aug 24
-                </Typography>
-              </CardContent>
-            </Box>
-            <Typography variant="h6" align="center" color="textSecondary">
-              To
-            </Typography>
-            <Typography
-              variant="h4"
-              align="center"
-              color="#66BB6A"
-              sx={{ mt: 2 }}
-            >
-              MED
-            </Typography>
-            <Box sx={{ mt: 2, color: "black" }}>
-              <CardContent
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <LocationOnIcon sx={{ color: "#66BB6A", mr: 1 }} />
-                <Typography variant="body2" sx={{ bgcolor: "#D7E7F4" }}>
-                  Prince Mohammad Bin Abdulaziz Intl (MED)
-                </Typography>
-              </CardContent>
-              <CardContent sx={{ display: "flex", alignItems: "center" }}>
-                <EventIcon sx={{ color: "#66BB6A", mr: 1 }} />
-                <Box sx={{ bgcolor: "#f5f5f5" }}>
+                <Box
+                  sx={{
+                    width: "71%",
+                    bgcolor: "#D7E7F4",
+                    height: "30px",
+                    "& .MuiOutlinedInput-root": {
+                      height: "30px",
+                      "& fieldset": {
+                        border: "none",
+                      },
+                    },
+                  }}
+                >
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <MobileDatePicker defaultValue={dayjs("2022-04-17")} />
                   </LocalizationProvider>
                 </Box>
-              </CardContent>
+              </Box>
+            </Box>
+
+            <Typography
+              variant="h6"
+              align="center"
+              color="textSecondary"
+              mt={2}
+            >
+              To
+            </Typography>
+            <Typography variant="h4" align="center" color="#66BB6A">
+              MED
+            </Typography>
+            <Box sx={{ color: "black" }}>
+              <AirportSelector value={3} />
+              <Box sx={{ display: "flex", alignItems: "center", mt: "2px" }}>
+                <EventIcon sx={{ color: "#66BB6A", mr: 1 }} />
+                <Box
+                  sx={{
+                    width: "71%",
+                    bgcolor: "#D7E7F4",
+                    height: "30px",
+                    "& .MuiOutlinedInput-root": {
+                      height: "30px",
+                      "& fieldset": {
+                        border: "none",
+                      },
+                    },
+                  }}
+                >
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <MobileDatePicker defaultValue={dayjs("2022-04-17")} />
+                  </LocalizationProvider>
+                </Box>
+              </Box>
             </Box>
           </Grid>
         </Grid>
