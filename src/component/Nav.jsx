@@ -19,11 +19,16 @@ function Nav() {
     <AppBar
       position="static"
       sx={{
-        width: "30rem",
+        width: {
+          xs: "90%",
+          sm: "80%",
+          md: "30rem",
+          lg: "30rem",
+        },
         bgcolor: "white",
         color: "black",
         borderRadius: "16px",
-        height: "42px",
+        height: "45px",
         margin: "auto",
         display: "flex",
         justifyContent: "center",
@@ -52,12 +57,20 @@ function Nav() {
                 key={page.name}
                 startIcon={page.icon}
                 sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "auto",
                   bgcolor: activePage === page.name ? "#66BB6A" : "white",
-                  height: "20px",
+                  color: activePage === page.name ? "white" : "#66BB6A",
+                  height: { xs: "22px", sm: "28px", md: "32px" },
+                  fontSize: { xs: "0.60rem", sm: "0.875rem", md: "0.85rem" },
+                  px: { xs: "2px", sm: "6px", md: "8px" },
+                  py: { xs: "2px", sm: "6px", md: "8px" },
+                  borderRadius: "8px",
                   "&:hover": {
                     bgcolor: "#66BB6A",
                   },
-                  color: activePage === page.name ? "white" : "#66BB6A",
                 }}
                 onClick={() => setActivePage(page.name)}
               >
