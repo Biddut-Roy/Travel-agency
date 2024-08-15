@@ -1,35 +1,15 @@
 import {
   AppBar,
-  Avatar,
   Box,
   Container,
   IconButton,
-  Menu,
-  MenuItem,
   Toolbar,
   Tooltip,
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
 
 const NavBar = () => {
-  const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-  // eslint-disable-next-line no-unused-vars
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
   return (
     <AppBar sx={{ bgcolor: "gray" }}>
       <Container maxWidth="xl">
@@ -52,7 +32,11 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            <img
+              src="https://cdn.flyfarint.com/WL/B2C/FFA2654/companylogo.webp?t=1723717693204"
+              alt="Logo"
+              height={100}
+            />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -61,7 +45,6 @@ const NavBar = () => {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
               color="inherit"
             >
               <MenuIcon />
@@ -84,37 +67,19 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            <img
+              src="https://cdn.flyfarint.com/WL/B2C/FFA2654/companylogo.webp?t=1723717693204"
+              alt="Logo"
+              height={100}
+            />
           </Typography>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              <IconButton sx={{ p: 0 }}>
+                <Typography>Login / Sign Up</Typography>
               </IconButton>
             </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         </Toolbar>
       </Container>

@@ -1,14 +1,14 @@
+import { Box } from "@mui/material";
 import "./App.css";
 import NavBar from "./component/NavBar";
-
-import FlightBooking from "./Landing/FlightBooking";
+import FlightSearch from "./Landing/FlightSearch";
 
 function App() {
   return (
-    <>
+    <Box>
       <NavBar />
-      <FlightBooking />
-    </>
+      <FlightSearch />
+    </Box>
   );
 }
 
