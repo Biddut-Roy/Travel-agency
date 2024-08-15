@@ -1,11 +1,19 @@
 import { AppBar, Box, Button, Container, Toolbar } from "@mui/material";
+import FlightIcon from "@mui/icons-material/Flight";
+import HotelIcon from "@mui/icons-material/Hotel";
+import TourIcon from "@mui/icons-material/Tour";
+import VisaIcon from "@mui/icons-material/AssignmentInd";
+import { useState } from "react";
 
-const pages = ["Page 1", "Page 2", "Page 3"]; // Example pages
+const pages = [
+  { name: "FLIGHT", icon: <FlightIcon /> },
+  { name: "HOTEL", icon: <HotelIcon /> },
+  { name: "TOUR", icon: <TourIcon /> },
+  { name: "VISA", icon: <VisaIcon /> },
+];
 
 function Nav() {
-  const handleCloseNavMenu = () => {
-    // Your logic for closing the navigation menu
-  };
+  const [activePage, setActivePage] = useState("FLIGHT");
 
   return (
     <AppBar
@@ -32,21 +40,28 @@ function Nav() {
           <Box
             sx={{
               display: "flex",
-              justifyContent: "center",
+              justifySpace: "between",
               alignItems: "center",
               flexGrow: 1,
+              gap: 2,
             }}
           >
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                variant="contained"
+                key={page.name}
+                startIcon={page.icon}
                 sx={{
-                  color: "black",
-                  height: "16px",
+                  bgcolor: activePage === page.name ? "#66BB6A" : "white",
+                  height: "20px",
+                  "&:hover": {
+                    bgcolor: "#66BB6A",
+                  },
+                  color: activePage === page.name ? "white" : "#66BB6A",
                 }}
+                onClick={() => setActivePage(page.name)}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>

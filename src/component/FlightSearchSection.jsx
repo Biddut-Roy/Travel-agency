@@ -75,8 +75,30 @@ const FlightSearchSection = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12} sx={{ mt: 2 }}>
-              <Button variant="contained" fullWidth sx={{ bgcolor: "#66BB6A" }}>
+              <Button
+                variant="contained"
+                fullWidth
+                sx={{
+                  bgcolor: "#66BB6A",
+                  "&:hover": {
+                    bgcolor: "#66BB6A",
+                  },
+                }}
+              >
                 Search for Flight
+              </Button>
+              <Button
+                variant="contained"
+                fullWidth
+                sx={{
+                  mt: "12px",
+                  bgcolor: "#66BB6A",
+                  "&:hover": {
+                    bgcolor: "#66BB6A",
+                  },
+                }}
+              >
+                Add City
               </Button>
             </Grid>
           </form>
