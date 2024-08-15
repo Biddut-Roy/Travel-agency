@@ -4,7 +4,7 @@
 
 ---
 
-# Project Name :Fly Far Tec
+# Project Name :Fly Far Tech
 
 ## Technology Stack
 
